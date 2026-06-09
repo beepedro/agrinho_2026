@@ -16,7 +16,7 @@
                 <li><a href="#solucoes">Soluções</a></li>
                 <li><a href="#calculadora">Calculadora</a></li>
                 <li><a href="#avaliacao">Avaliação do Solo</a></li>
-                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#dicas">Dicas Sustentáveis</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +25,6 @@
         <section id="tema">
             <h2>Tema</h2>
             <p><strong>Agro forte, futuro sustentável:</strong> equilíbrio entre produção e meio ambiente.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Water_drop_icon.png" alt="Ícone de água" class="imagem-ilustrativa">
         </section>
 
         <section id="problema">
@@ -37,8 +36,8 @@
         <section id="solucoes">
             <h2>Soluções Sustentáveis</h2>
             <ul>
-                <li>Uso de irrigação por gotejamento para reduzir desperdício.</li>
-                <li>Rotação de culturas para melhorar a fertilidade do solo.</li>
+                <li>Irrigação por gotejamento para reduzir desperdício.</li>
+                <li>Rotação de culturas para melhorar a fertilidade.</li>
                 <li>Captação de água da chuva para uso agrícola.</li>
                 <li>Adubação orgânica para enriquecer o solo naturalmente.</li>
             </ul>
@@ -54,35 +53,31 @@
                 <select id="plantacao" required>
                     <option value="milho">Milho 🌽</option>
                     <option value="soja">Soja 🌱</option>
-                    <option value="cana">Cana-de-açúcar 🍃</option>
+                    <option value="cana">Cana 🍃</option>
                 </select>
 
                 <button type="submit">Calcular</button>
             </form>
             <div id="resultado"></div>
+            <div id="barra-progresso">
+                <div id="progresso"></div>
+            </div>
         </section>
 
         <section id="avaliacao">
             <h2>Avaliação do Solo</h2>
             <form>
-                <label for="foto-solo">Envie uma foto do seu solo:</label>
-                <input type="file" id="foto-solo" accept="image/*">
-
                 <label for="descricao-solo">Descreva o problema do solo:</label>
                 <textarea id="descricao-solo"></textarea>
-
                 <button type="submit">Enviar</button>
             </form>
-            <p>*A avaliação será feita manualmente com base na foto e descrição.</p>
+            <p>*A avaliação será feita manualmente com base na descrição.</p>
         </section>
 
-        <section id="galeria">
-            <h2>Galeria de Inspiração</h2>
-            <div class="galeria">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Drip_irrigation.jpg" alt="Irrigação por gotejamento">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Soil_profile.jpg" alt="Perfil do solo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Rainwater_collection.jpg" alt="Captação de água da chuva">
-            </div>
+        <section id="dicas">
+            <h2>Dicas Sustentáveis</h2>
+            <button id="btn-dica">Gerar dica</button>
+            <p id="dica"></p>
         </section>
     </main>
 
@@ -90,7 +85,12 @@
         <p>Projeto Agrinho 2026 - Pedro Ricardo Witkovski</p>
     </footer>
 
-    <button id="btn-acessibilidade">Acessibilidade</button>
+    <div id="menu-acessibilidade">
+        <button onclick="aumentarFonte()">A+</button>
+        <button onclick="diminuirFonte()">A-</button>
+        <button onclick="toggleContraste()">Contraste</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
