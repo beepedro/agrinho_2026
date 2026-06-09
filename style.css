@@ -97,3 +97,13 @@ footer {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+/* Estrelas de avaliação */
+#avaliacao-estrelas {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.estrela.selecionada {
+    color: gold;
+}
