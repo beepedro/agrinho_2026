@@ -52,3 +52,14 @@ const resultadoAvaliacao = document.getElementById("resultado-avaliacao");
 estrelas.forEach(estrela => {
   estrela.addEventListener("click", function() {
     const valor = parseInt(this.getAttribute("data-valor"));
+    estrelas.forEach(e => e.classList.remove("selecionada"));
+    for (let i = 0; i < valor; i++) estrelas[i].classList.add("selecionada");
+    resultadoAvaliacao.innerText = `Você avaliou com ${valor} estrela(s). Obrigado!`;
+  });
+});
+
+// Acessibilidade
+let tamanhoFonte = 16;
+function aumentarFonte() { tamanhoFonte += 2; document.body.style.fontSize = tamanhoFonte + "px"; }
+function diminuirFonte() { if (tamanhoFonte > 10) { tamanhoFonte -= 2; document.body.style.fontSize = tamanhoFonte + "px"; } }
+function toggleContraste() { document.body.classList.toggle("alto-contraste"); }
