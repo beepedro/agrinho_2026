@@ -90,7 +90,7 @@ footer {
 
 .alto-contraste {
     background: black !important;
-    color: yellow !important;
+    color: blue !important;
 }
 
 @keyframes fadeIn {
@@ -106,4 +106,10 @@ footer {
 
 .estrela.selecionada {
     color: gold;
+    transition: transform 0.2s;
+}
+
+.estrela:hover {
+    transform: scale(1.2);
+    color: #ffeb3b;
 }
