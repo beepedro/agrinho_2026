@@ -15,21 +15,58 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
   document.getElementById("progresso").style.width = porcentagem + "%";
 });
 
-// Avaliação do Solo
+// Avaliação do Solo com causas e várias soluções
 document.getElementById("form-solo").addEventListener("submit", function(e) {
   e.preventDefault();
   const descricao = document.getElementById("descricao-solo").value.toLowerCase();
   let resultado = "";
-  if (descricao.includes("seco")) {
-    resultado = "⚠️ Possível causa: falta de irrigação. ✅ Sugestão: irrigação por gotejamento.";
-  } else if (descricao.includes("fertilidade")) {
-    resultado = "⚠️ Possível causa: deficiência de nutrientes. ✅ Sugestão: adubação orgânica.";
-  } else if (descricao.includes("compactado")) {
-    resultado = "⚠️ Possível causa: solo compactado. ✅ Sugestão: descompactação mecânica.";
+
+  if (descricao.includes("seco") || descricao.includes("seca")) {
+    resultado = `
+      <p><strong>⚠️ Possível causa:</strong> Falta de irrigação ou baixa retenção de água.</p>
+      <p><strong>✅ O que pode ser feito:</strong></p>
+      <ul>
+        <li>Implementar irrigação por gotejamento.</li>
+        <li>Adicionar matéria orgânica para melhorar retenção.</li>
+        <li>Usar cobertura vegetal (palhada) para reduzir evaporação.</li>
+        <li>Captação de água da chuva para irrigação.</li>
+      </ul>
+    `;
+  } else if (descricao.includes("fertilidade") || descricao.includes("fraco")) {
+    resultado = `
+      <p><strong>⚠️ Possível causa:</strong> Deficiência de nutrientes ou uso contínuo sem rotação.</p>
+      <p><strong>✅ O que pode ser feito:</strong></p>
+      <ul>
+        <li>Aplicar adubação orgânica ou compostagem.</li>
+        <li>Fazer rotação de culturas para diversificar nutrientes.</li>
+        <li>Usar adubos verdes (plantas que enriquecem o solo).</li>
+        <li>Evitar uso excessivo de químicos que empobrecem o solo.</li>
+      </ul>
+    `;
+  } else if (descricao.includes("compactado") || descricao.includes("duro")) {
+    resultado = `
+      <p><strong>⚠️ Possível causa:</strong> Compactação por máquinas ou pisoteio.</p>
+      <p><strong>✅ O que pode ser feito:</strong></p>
+      <ul>
+        <li>Realizar descompactação mecânica (subsolagem).</li>
+        <li>Plantar espécies de raízes profundas para quebrar o solo.</li>
+        <li>Evitar tráfego excessivo de máquinas pesadas.</li>
+        <li>Adicionar matéria orgânica para melhorar estrutura.</li>
+      </ul>
+    `;
   } else {
-    resultado = "⚠️ Possível causa não identificada. ✅ Sugestão: consultar agrônomo.";
+    resultado = `
+      <p><strong>⚠️ Possível causa:</strong> Não identificada claramente.</p>
+      <p><strong>✅ O que pode ser feito:</strong></p>
+      <ul>
+        <li>Realizar análise química do solo.</li>
+        <li>Consultar um agrônomo para diagnóstico detalhado.</li>
+        <li>Observar histórico de uso da área.</li>
+      </ul>
+    `;
   }
-  resultado += "<br><em>Essas são apenas hipóteses, consulte um técnico para certeza.</em>";
+
+  resultado += `<p><em>Essas são apenas possíveis causas e soluções. Para certeza, é necessário acompanhamento técnico.</em></p>`;
   document.getElementById("resultado-solo").innerHTML = resultado;
 });
 
