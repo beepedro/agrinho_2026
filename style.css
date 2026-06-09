@@ -1,14 +1,14 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background: linear-gradient(180deg, #e6f7ff, #fff);
+    background: linear-gradient(180deg, #d7ccc8, #a5d6a7);
     color: #333;
     line-height: 1.6;
     transition: all 0.3s ease;
 }
 
 header {
-    background: linear-gradient(90deg, #004080, #00b894);
+    background: linear-gradient(90deg, #4e342e, #2e7d32);
     color: white;
     padding: 1rem;
     text-align: center;
@@ -33,7 +33,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffdd59;
+    color: #ffeb3b;
 }
 
 section {
@@ -47,7 +47,7 @@ section {
 }
 
 footer {
-    background-color: #333;
+    background-color: #4e342e;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -63,7 +63,7 @@ footer {
 #progresso {
     height: 20px;
     width: 0;
-    background: #00b894;
+    background: #2e7d32;
     border-radius: 8px;
     transition: width 1s ease;
 }
@@ -72,7 +72,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #004080;
+    background: #4e342e;
     padding: 10px;
     border-radius: 8px;
 }
@@ -82,7 +82,7 @@ footer {
     padding: 8px;
     border: none;
     background: #fff;
-    color: #004080;
+    color: #4e342e;
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
