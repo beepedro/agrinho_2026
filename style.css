@@ -53,6 +53,7 @@ footer {
     padding: 1rem;
 }
 
+/* Barra de progresso */
 #barra-progresso {
     width: 100%;
     background: #ddd;
@@ -68,6 +69,7 @@ footer {
     transition: width 1s ease;
 }
 
+/* Menu de acessibilidade */
 #menu-acessibilidade {
     position: fixed;
     bottom: 20px;
@@ -88,16 +90,13 @@ footer {
     border-radius: 4px;
 }
 
+/* Alto contraste */
 .alto-contraste {
     background: black !important;
-    color: blue !important;
+    color: yellow !important;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-/* Estrelas de avaliação */
+/* Estrelas */
 #avaliacao-estrelas {
     font-size: 2rem;
     color: #ccc;
@@ -112,4 +111,9 @@ footer {
 .estrela:hover {
     transform: scale(1.2);
     color: #ffeb3b;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
