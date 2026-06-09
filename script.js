@@ -65,26 +65,13 @@ document.getElementById("form-solo").addEventListener("submit", function(e) {
     }
 });
 
-// Feedback do site
-document.getElementById("form-feedback").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const opiniao = document.getElementById("opiniao").value;
-    if (opiniao.trim() !== "") {
-        alert("Obrigado pelo seu feedback!");
-    } else {
-        alert("Por favor, escreva sua opinião.");
-    }
-});
-
-    alert("Sua descrição foi registrada!"); // feedback simples
-});
 // Avaliação por estrelas
 const estrelas = document.querySelectorAll(".estrela");
 const resultadoAvaliacao = document.getElementById("resultado-avaliacao");
 
 estrelas.forEach(estrela => {
     estrela.addEventListener("click", function() {
-        const valor = this.getAttribute("data-valor");
+        const valor = parseInt(this.getAttribute("data-valor"));
 
         // Resetar todas
         estrelas.forEach(e => e.classList.remove("selecionada"));
