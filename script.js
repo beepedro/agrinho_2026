@@ -1,4 +1,4 @@
-// Função da calculadora
+// Calculadora com barra de progresso
 document.getElementById("form-calculadora").addEventListener("submit", function(e) {
     e.preventDefault();
     const hectares = parseFloat(document.getElementById("hectares").value);
@@ -9,25 +9,22 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
     if (plantacao === "soja") consumo = hectares * 4000;
     if (plantacao === "cana") consumo = hectares * 6000;
 
-    let mensagem = consumo <= 20000 
-        ? "✅ Seu consumo está dentro da média sustentável."
-        : "⚠️ Atenção: seu consumo está acima do recomendado.";
+    let limite = 20000;
+    let porcentagem = Math.min((consumo / limite) * 100, 100);
 
     document.getElementById("resultado").innerHTML =
-        `<p>Consumo recomendado: <strong>${consumo} litros por semana</strong>.</p><p>${mensagem}</p>`;
+        `<p>Consumo recomendado: <strong>${consumo} litros/semana</strong>.</p>`;
+
+    document.getElementById("progresso").style.width = porcentagem + "%";
+    document.getElementById("progresso").style.background = consumo <= limite ? "#00b894" : "#d63031";
 });
 
-// Botão de acessibilidade
-const btn = document.getElementById("btn-acessibilidade");
-let fonte = 16;
-let contraste = false;
+// Dicas sustentáveis
+const dicas = [
+    "Use irrigação por gotejamento para economizar água.",
+    "Faça rotação de culturas para melhorar o solo.",
+    "Capte água da chuva para irrigação.",
+    "Prefira adubação orgânica para enriquecer a terra."
+];
 
-btn.addEventListener("click", function() {
-    if (!contraste) {
-        document.body.classList.toggle("alto-contraste");
-        contraste = true;
-    } else {
-        fonte += 2;
-        document.body.style.fontSize = fonte + "px";
-    }
-});
+document.getElementById("btn-dica
