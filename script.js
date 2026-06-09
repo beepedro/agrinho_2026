@@ -1,6 +1,6 @@
-// === Calculadora de Consumo de Água ===
+// Calculadora
 document.getElementById("form-calculadora").addEventListener("submit", function(e) {
-  e.preventDefault(); // impede atualização
+  e.preventDefault();
   const hectares = parseFloat(document.getElementById("hectares").value);
   const plantacao = document.getElementById("plantacao").value.toLowerCase();
   let consumo = 0;
@@ -11,49 +11,44 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
   let limite = 20000;
   let porcentagem = Math.min((consumo / limite) * 100, 100);
   document.getElementById("resultado").innerHTML =
-    `<p>Consumo recomendado para <strong>${plantacao}</strong>: <strong>${consumo} litros/semana</strong>.</p>`;
+    `<p>Consumo recomendado: <strong>${consumo} litros/semana</strong></p>`;
   document.getElementById("progresso").style.width = porcentagem + "%";
-  document.getElementById("progresso").style.background = consumo <= limite ? "#2e7d32" : "#d32f2f";
 });
 
-// === Avaliação do Solo com causas e soluções ===
+// Avaliação do Solo
 document.getElementById("form-solo").addEventListener("submit", function(e) {
-  e.preventDefault(); // impede atualização
+  e.preventDefault();
   const descricao = document.getElementById("descricao-solo").value.toLowerCase();
   let resultado = "";
-  if (descricao.includes("seco") || descricao.includes("seca")) {
-    resultado = `<p><strong>⚠️ Possível causa:</strong> Falta de irrigação ou baixa retenção de água.</p>
-                 <p><strong>✅ O que pode ser feito:</strong> Irrigação por gotejamento e adição de matéria orgânica.</p>`;
-  } else if (descricao.includes("fertilidade") || descricao.includes("fraco")) {
-    resultado = `<p><strong>⚠️ Possível causa:</strong> Deficiência de nutrientes ou uso contínuo sem rotação.</p>
-                 <p><strong>✅ O que pode ser feito:</strong> Adubação orgânica, rotação de culturas e compostagem.</p>`;
-  } else if (descricao.includes("compactado") || descricao.includes("duro")) {
-    resultado = `<p><strong>⚠️ Possível causa:</strong> Compactação por máquinas ou pisoteio.</p>
-                 <p><strong>✅ O que pode ser feito:</strong> Descompactação mecânica e cultivo de raízes profundas.</p>`;
+  if (descricao.includes("seco")) {
+    resultado = "⚠️ Possível causa: falta de irrigação. ✅ Sugestão: irrigação por gotejamento.";
+  } else if (descricao.includes("fertilidade")) {
+    resultado = "⚠️ Possível causa: deficiência de nutrientes. ✅ Sugestão: adubação orgânica.";
+  } else if (descricao.includes("compactado")) {
+    resultado = "⚠️ Possível causa: solo compactado. ✅ Sugestão: descompactação mecânica.";
   } else {
-    resultado = `<p><strong>⚠️ Possível causa:</strong> Não identificada claramente.</p>
-                 <p><strong>✅ O que pode ser feito:</strong> Consultar um agrônomo para análise detalhada.</p>`;
+    resultado = "⚠️ Possível causa não identificada. ✅ Sugestão: consultar agrônomo.";
   }
-  resultado += `<p><em>Essas são apenas possíveis causas e soluções. Para certeza, é necessário acompanhamento técnico.</em></p>`;
+  resultado += "<br><em>Essas são apenas hipóteses, consulte um técnico para certeza.</em>";
   document.getElementById("resultado-solo").innerHTML = resultado;
 });
 
-// === Dicas Sustentáveis ===
+// Dicas
 const dicas = [
-  "Use irrigação por gotejamento para economizar água.",
-  "Faça rotação de culturas para melhorar o solo.",
-  "Capte água da chuva para irrigação.",
-  "Prefira adubação orgânica para enriquecer a terra.",
-  "Evite desperdício monitorando o consumo semanal."
+  "Use irrigação por gotejamento.",
+  "Faça rotação de culturas.",
+  "Capte água da chuva.",
+  "Prefira adubação orgânica.",
+  "Monitore o consumo semanal."
 ];
 document.getElementById("btn-dica").addEventListener("click", function() {
   const dicaAleatoria = dicas[Math.floor(Math.random() * dicas.length)];
   document.getElementById("dica").innerText = dicaAleatoria;
 });
 
-// === Avaliação por Estrelas ===
+// Estrelas
 const estrelas = document.querySelectorAll(".estrela");
 const resultadoAvaliacao = document.getElementById("resultado-avaliacao");
 estrelas.forEach(estrela => {
   estrela.addEventListener("click", function() {
-    const valor = parse
+    const valor = parseInt(this.getAttribute("data-valor"));
