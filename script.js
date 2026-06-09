@@ -20,15 +20,14 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
     document.getElementById("progresso").style.background = consumo <= limite ? "#2e7d32" : "#d32f2f";
 });
 
-// Avaliação do Solo
+// Avaliação do Solo (sem foto)
 document.getElementById("form-solo").addEventListener("submit", function(e) {
     e.preventDefault();
-    const foto = document.getElementById("foto-solo").files[0];
     const descricao = document.getElementById("descricao-solo").value;
-    if (foto && descricao.trim() !== "") {
+    if (descricao.trim() !== "") {
         alert("Sua avaliação foi registrada com sucesso!");
     } else {
-        alert("Por favor, envie uma foto e descreva o problema.");
+        alert("Por favor, descreva o problema do solo.");
     }
 });
 
