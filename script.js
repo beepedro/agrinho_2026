@@ -16,3 +16,68 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
     document.getElementById("resultado").innerHTML =
         `<p>Consumo recomendado para <strong>${plantacao}</strong>: <strong>${consumo} litros/semana</strong>.</p>`;
 
+    document.getElementById("progresso").style.width = porcentagem + "%";
+    document.getElementById("progresso").style.background = consumo <= limite ? "#2e7d32" : "#d32f2f";
+});
+
+// Avaliação do Solo
+document.getElementById("form-solo").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const foto = document.getElementById("foto-solo").files[0];
+    const descricao = document.getElementById("descricao-solo").value;
+    if (foto && descricao.trim() !== "") {
+        alert("Sua avaliação foi registrada com sucesso!");
+    } else {
+        alert("Por favor, envie uma foto e descreva o problema.");
+    }
+});
+
+// Dicas Sustentáveis
+const dicas = [
+    "Use irrigação por gotejamento para economizar água.",
+    "Faça rotação de culturas para melhorar o solo.",
+    "Capte água da chuva para irrigação.",
+    "Prefira adubação orgânica para enriquecer a terra.",
+    "Evite desperdício monitorando o consumo semanal."
+];
+
+document.getElementById("btn-dica").addEventListener("click", function() {
+    const dicaAleatoria = dicas[Math.floor(Math.random() * dicas.length)];
+    document.getElementById("dica").innerText = dicaAleatoria;
+});
+
+// Avaliação por estrelas
+const estrelas = document.querySelectorAll(".estrela");
+const resultadoAvaliacao = document.getElementById("resultado-avaliacao");
+
+estrelas.forEach(estrela => {
+    estrela.addEventListener("click", function() {
+        const valor = parseInt(this.getAttribute("data-valor"));
+
+        // Resetar todas
+        estrelas.forEach(e => e.classList.remove("selecionada"));
+
+        // Selecionar até a estrela clicada
+        for (let i = 0; i < valor; i++) {
+            estrelas[i].classList.add("selecionada");
+        }
+
+        resultadoAvaliacao.innerText = `Você avaliou o site com ${valor} estrela(s). Obrigado pelo feedback!`;
+    });
+});
+
+// Acessibilidade
+let tamanhoFonte = 16;
+function aumentarFonte() {
+    tamanhoFonte += 2;
+    document.body.style.fontSize = tamanhoFonte + "px";
+}
+function diminuirFonte() {
+    if (tamanhoFonte > 10) {
+        tamanhoFonte -= 2;
+        document.body.style.fontSize = tamanhoFonte + "px";
+    }
+}
+function toggleContraste() {
+    document.body.classList.toggle("alto-contraste");
+}
