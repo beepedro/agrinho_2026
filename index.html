@@ -1,101 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drop of Water</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop of Water</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>💧 Drop of Water</h1>
-        <nav>
-            <ul>
-                <li><a href="#tema">Tema</a></li>
-                <li><a href="#problema">Problema</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#calculadora">Calculadora</a></li>
-                <li><a href="#avaliacao">Avaliação do Solo</a></li>
-                <li><a href="#dicas">Dicas Sustentáveis</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>💧 Drop of Water</h1>
+    <nav>
+      <ul>
+        <li><a href="#tema">Tema</a></li>
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#avaliacao">Avaliação do Solo</a></li>
+        <li><a href="#dicas">Dicas Sustentáveis</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="tema">
-            <h2>Tema</h2>
-            <p><strong>Agro forte, futuro sustentável:</strong> equilíbrio entre produção e meio ambiente.</p>
-        </section>
+  <main>
+    <section id="tema">
+      <h2>Tema</h2>
+      <p><strong>Agro forte, futuro sustentável:</strong> equilíbrio entre produção e meio ambiente.</p>
+    </section>
 
-        <section id="problema">
-            <h2>Problema</h2>
-            <p>O desperdício de água na agricultura é um dos maiores desafios ambientais. Estima-se que mais de 70% da água doce disponível seja utilizada no campo, muitas vezes de forma ineficiente.</p>
-        </section>
+    <section id="problema">
+      <h2>Problema</h2>
+      <p>O desperdício de água na agricultura é um dos maiores desafios ambientais. Estima-se que mais de 70% da água doce disponível seja utilizada no campo, muitas vezes de forma ineficiente.</p>
+    </section>
 
-        <section id="solucoes">
-            <h2>Soluções Sustentáveis</h2>
-            <ul>
-                <li>Irrigação inteligente com gotejamento.</li>
-                <li>Rotação de culturas para fertilidade.</li>
-                <li>Captação de água da chuva.</li>
-                <li>Adubação orgânica.</li>
-            </ul>
-        </section>
+    <section id="solucoes">
+      <h2>Soluções Sustentáveis</h2>
+      <ul>
+        <li>Irrigação inteligente com gotejamento.</li>
+        <li>Rotação de culturas para fertilidade.</li>
+        <li>Captação de água da chuva.</li>
+        <li>Adubação orgânica.</li>
+      </ul>
+    </section>
 
-        <section id="calculadora">
-            <h2>Calculadora de Consumo de Água</h2>
-            <form id="form-calculadora">
-                <label for="hectares">Quantos hectares você possui?</label>
-                <input type="number" id="hectares" required>
-                <label for="plantacao">Digite o tipo de plantação:</label>
-                <input type="text" id="plantacao" placeholder="Ex: milho, soja, cana" required>
-                <button type="submit">Calcular</button>
-            </form>
-            <div id="resultado"></div>
-            <div id="barra-progresso"><div id="progresso"></div></div>
-        </section>
+    <section id="calculadora">
+      <h2>Calculadora de Consumo de Água</h2>
+      <form id="form-calculadora">
+        <label for="hectares">Quantos hectares você possui?</label>
+        <input type="number" id="hectares" required>
+        <label for="plantacao">Digite o tipo de plantação:</label>
+        <input type="text" id="plantacao" placeholder="Ex: milho, soja, cana" required>
+        <button type="submit">Calcular</button>
+      </form>
+      <div id="resultado"></div>
+      <div id="barra-progresso"><div id="progresso"></div></div>
+    </section>
 
-        <section id="avaliacao">
-            <h2>Avaliação do Solo</h2>
-            <form id="form-solo">
-                <label for="descricao-solo">Descreva o problema do solo:</label>
-                <textarea id="descricao-solo" placeholder="Ex: solo seco, pouca fertilidade"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <div id="resultado-solo"></div>
-        </section>
+    <section id="avaliacao">
+      <h2>Avaliação do Solo</h2>
+      <form id="form-solo">
+        <label for="descricao-solo">Descreva o problema do solo:</label>
+        <textarea id="descricao-solo" placeholder="Ex: solo seco, pouca fertilidade"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="resultado-solo"></div>
+    </section>
 
-        <section id="dicas">
-            <h2>Dicas Sustentáveis</h2>
-            <button id="btn-dica">Gerar dica</button>
-            <p id="dica"></p>
-        </section>
+    <section id="dicas">
+      <h2>Dicas Sustentáveis</h2>
+      <button id="btn-dica">Gerar dica</button>
+      <p id="dica"></p>
+    </section>
 
-        <section id="feedback">
-            <h2>Avaliação do Site</h2>
-            <p>Deixe sua avaliação:</p>
-            <div id="avaliacao-estrelas">
-                <span class="estrela" data-valor="1">★</span>
-                <span class="estrela" data-valor="2">★</span>
-                <span class="estrela" data-valor="3">★</span>
-                <span class="estrela" data-valor="4">★</span>
-                <span class="estrela" data-valor="5">★</span>
-            </div>
-            <p id="resultado-avaliacao"></p>
-        </section>
-    </main>
+    <section id="feedback">
+      <h2>Avaliação do Site</h2>
+      <p>Deixe sua avaliação:</p>
+      <div id="avaliacao-estrelas">
+        <span class="estrela" data-valor="1">★</span>
+        <span class="estrela" data-valor="2">★</span>
+        <span class="estrela" data-valor="3">★</span>
+        <span class="estrela" data-valor="4">★</span>
+        <span class="estrela" data-valor="5">★</span>
+      </div>
+      <p id="resultado-avaliacao"></p>
+    </section>
+  </main>
 
-    <footer>
-        <p>Projeto Agrinho 2026 - Pedro Ricardo Witkovski</p>
-    </footer>
+  <footer>
+    <p>Projeto Agrinho 2026 - Pedro Ricardo Witkovski</p>
+  </footer>
 
-    <div id="menu-acessibilidade">
-        <button onclick="aumentarFonte()">A+</button>
-        <button onclick="diminuirFonte()">A-</button>
-        <button onclick="toggleContraste()">Contraste</button>
-    </div>
+  <div id="menu-acessibilidade">
+    <button onclick="aumentarFonte()">A+</button>
+    <button onclick="diminuirFonte()">A-</button>
+    <button onclick="toggleContraste()">Contraste</button>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
