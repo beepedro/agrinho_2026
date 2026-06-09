@@ -1,6 +1,6 @@
 // === Calculadora de Consumo de Água ===
 document.getElementById("form-calculadora").addEventListener("submit", function(e) {
-    e.preventDefault(); // impede atualização da página
+    e.preventDefault();
     const hectares = parseFloat(document.getElementById("hectares").value);
     const plantacao = document.getElementById("plantacao").value.toLowerCase();
     let consumo = 0;
@@ -8,7 +8,7 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
     if (plantacao.includes("milho")) consumo = hectares * 5000;
     else if (plantacao.includes("soja")) consumo = hectares * 4000;
     else if (plantacao.includes("cana")) consumo = hectares * 6000;
-    else consumo = hectares * 4500; // valor padrão
+    else consumo = hectares * 4500;
 
     let limite = 20000;
     let porcentagem = Math.min((consumo / limite) * 100, 100);
@@ -20,15 +20,36 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
     document.getElementById("progresso").style.background = consumo <= limite ? "#2e7d32" : "#d32f2f";
 });
 
-// === Avaliação do Solo (sem foto) ===
+// === Avaliação do Solo com causas e soluções ===
 document.getElementById("form-solo").addEventListener("submit", function(e) {
-    e.preventDefault(); // impede atualização da página
-    const descricao = document.getElementById("descricao-solo").value;
-    if (descricao.trim() !== "") {
-        alert("Sua avaliação foi registrada com sucesso!");
+    e.preventDefault();
+    const descricao = document.getElementById("descricao-solo").value.toLowerCase();
+    let resultado = "";
+
+    if (descricao.includes("seco") || descricao.includes("seca")) {
+        resultado = `
+            <p><strong>Possível causa:</strong> Falta de irrigação ou baixa retenção de água.</p>
+            <p><strong>O que pode ser feito:</strong> Irrigação por gotejamento e adição de matéria orgânica.</p>
+        `;
+    } else if (descricao.includes("fertilidade") || descricao.includes("fraco")) {
+        resultado = `
+            <p><strong>Possível causa:</strong> Deficiência de nutrientes ou uso contínuo sem rotação.</p>
+            <p><strong>O que pode ser feito:</strong> Adubação orgânica, rotação de culturas e compostagem.</p>
+        `;
+    } else if (descricao.includes("compactado") || descricao.includes("duro")) {
+        resultado = `
+            <p><strong>Possível causa:</strong> Compactação por máquinas ou pisoteio.</p>
+            <p><strong>O que pode ser feito:</strong> Descompactação mecânica e cultivo de raízes profundas.</p>
+        `;
     } else {
-        alert("Por favor, descreva o problema do solo.");
+        resultado = `
+            <p><strong>Possível causa:</strong> Não identificada claramente.</p>
+            <p><strong>O que pode ser feito:</strong> Consultar um agrônomo para análise detalhada.</p>
+        `;
     }
+
+    resultado += `<p><em>Essas são apenas possíveis causas e soluções. Para certeza, é necessário acompanhamento técnico.</em></p>`;
+    document.getElementById("resultado-solo").innerHTML = resultado;
 });
 
 // === Dicas Sustentáveis ===
@@ -52,31 +73,5 @@ const resultadoAvaliacao = document.getElementById("resultado-avaliacao");
 estrelas.forEach(estrela => {
     estrela.addEventListener("click", function() {
         const valor = parseInt(this.getAttribute("data-valor"));
-
-        // Resetar todas
         estrelas.forEach(e => e.classList.remove("selecionada"));
-
-        // Selecionar até a estrela clicada
-        for (let i = 0; i < valor; i++) {
-            estrelas[i].classList.add("selecionada");
-        }
-
-        resultadoAvaliacao.innerText = `Você avaliou o site com ${valor} estrela(s). Obrigado pelo feedback!`;
-    });
-});
-
-// === Acessibilidade ===
-let tamanhoFonte = 16;
-function aumentarFonte() {
-    tamanhoFonte += 2;
-    document.body.style.fontSize = tamanhoFonte + "px";
-}
-function diminuirFonte() {
-    if (tamanhoFonte > 10) {
-        tamanhoFonte -= 2;
-        document.body.style.fontSize = tamanhoFonte + "px";
-    }
-}
-function toggleContraste() {
-    document.body.classList.toggle("alto-contraste");
-}
+        for (let i =
