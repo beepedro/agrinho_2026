@@ -9,8 +9,12 @@ document.getElementById("form-calculadora").addEventListener("submit", function(
     if (plantacao === "soja") consumo = hectares * 4000;
     if (plantacao === "cana") consumo = hectares * 6000;
 
-    document.getElementById("resultado").innerText =
-        `Consumo recomendado: ${consumo} litros por semana.`;
+    let mensagem = consumo <= 20000 
+        ? "✅ Seu consumo está dentro da média sustentável."
+        : "⚠️ Atenção: seu consumo está acima do recomendado.";
+
+    document.getElementById("resultado").innerHTML =
+        `<p>Consumo recomendado: <strong>${consumo} litros por semana</strong>.</p><p>${mensagem}</p>`;
 });
 
 // Botão de acessibilidade
