@@ -25,21 +25,22 @@
         <section id="tema">
             <h2>Tema</h2>
             <p><strong>Agro forte, futuro sustentável:</strong> equilíbrio entre produção e meio ambiente.</p>
+            <p>Este projeto busca conscientizar agricultores e moradores da zona rural sobre o uso racional da água e a importância de cuidar da fertilidade do solo. A tecnologia pode ser uma aliada poderosa para garantir que o campo continue produtivo sem comprometer os recursos naturais.</p>
         </section>
 
         <section id="problema">
             <h2>Problema</h2>
-            <p>O desperdício de água no campo e a necessidade de melhorar a fertilidade do solo.</p>
-            <p>🌱 A agricultura consome cerca de 70% da água doce disponível. O uso consciente é essencial para garantir sustentabilidade.</p>
+            <p>O desperdício de água na agricultura é um dos maiores desafios ambientais. Estima-se que mais de 70% da água doce disponível seja utilizada no campo, muitas vezes de forma ineficiente.</p>
+            <p>Além disso, solos mal cuidados perdem nutrientes e se tornam menos férteis, exigindo mais insumos químicos e aumentando os custos de produção.</p>
         </section>
 
         <section id="solucoes">
             <h2>Soluções Sustentáveis</h2>
             <ul>
-                <li>Irrigação por gotejamento para reduzir desperdício.</li>
-                <li>Rotação de culturas para melhorar a fertilidade.</li>
-                <li>Captação de água da chuva para uso agrícola.</li>
-                <li>Adubação orgânica para enriquecer o solo naturalmente.</li>
+                <li><strong>Irrigação inteligente:</strong> sistemas de gotejamento reduzem o desperdício.</li>
+                <li><strong>Rotação de culturas:</strong> ajuda a manter o solo fértil e equilibrado.</li>
+                <li><strong>Captação de água da chuva:</strong> aproveitamento de recursos naturais.</li>
+                <li><strong>Adubação orgânica:</strong> melhora a qualidade da terra sem poluir.</li>
             </ul>
         </section>
 
@@ -49,12 +50,8 @@
                 <label for="hectares">Quantos hectares você possui?</label>
                 <input type="number" id="hectares" required>
 
-                <label for="plantacao">Tipo de plantação:</label>
-                <select id="plantacao" required>
-                    <option value="milho">Milho 🌽</option>
-                    <option value="soja">Soja 🌱</option>
-                    <option value="cana">Cana 🍃</option>
-                </select>
+                <label for="plantacao">Digite o tipo de plantação:</label>
+                <input type="text" id="plantacao" placeholder="Ex: milho, soja, cana" required>
 
                 <button type="submit">Calcular</button>
             </form>
@@ -68,7 +65,7 @@
             <h2>Avaliação do Solo</h2>
             <form>
                 <label for="descricao-solo">Descreva o problema do solo:</label>
-                <textarea id="descricao-solo"></textarea>
+                <textarea id="descricao-solo" placeholder="Ex: solo muito seco, pouca fertilidade"></textarea>
                 <button type="submit">Enviar</button>
             </form>
             <p>*A avaliação será feita manualmente com base na descrição.</p>
