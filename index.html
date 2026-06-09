@@ -17,7 +17,7 @@
                 <li><a href="#calculadora">Calculadora</a></li>
                 <li><a href="#avaliacao">Avaliação do Solo</a></li>
                 <li><a href="#dicas">Dicas Sustentáveis</a></li>
-                <li><a href="#feedback">Feedback do Site</a></li>
+                <li><a href="#feedback">Feedback</a></li>
             </ul>
         </nav>
     </header>
@@ -86,16 +86,32 @@
             <p id="dica"></p>
         </section>
 
-     <!-- Feedback com estrelas -->
-<section id="feedback">
-    <h2>Avaliação do Site</h2>
-    <p>Deixe sua avaliação:</p>
-    <div id="avaliacao-estrelas">
-        <span class="estrela" data-valor="1">★</span>
-        <span class="estrela" data-valor="2">★</span>
-        <span class="estrela" data-valor="3">★</span>
-        <span class="estrela" data-valor="4">★</span>
-        <span class="estrela" data-valor="5">★</span>
+        <!-- Feedback com estrelas -->
+        <section id="feedback">
+            <h2>Avaliação do Site</h2>
+            <p>Deixe sua avaliação:</p>
+            <div id="avaliacao-estrelas">
+                <span class="estrela" data-valor="1">★</span>
+                <span class="estrela" data-valor="2">★</span>
+                <span class="estrela" data-valor="3">★</span>
+                <span class="estrela" data-valor="4">★</span>
+                <span class="estrela" data-valor="5">★</span>
+            </div>
+            <p id="resultado-avaliacao"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto Agrinho 2026 - Pedro Ricardo Witkovski</p>
+    </footer>
+
+    <!-- Menu de acessibilidade -->
+    <div id="menu-acessibilidade">
+        <button onclick="aumentarFonte()">A+</button>
+        <button onclick="diminuirFonte()">A-</button>
+        <button onclick="toggleContraste()">Contraste</button>
     </div>
-    <p id="resultado-avaliacao"></p>
-</section>
+
+    <script src="script.js"></script>
+</body>
+</html>
