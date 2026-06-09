@@ -1,131 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Drop of Water - Agricultura Sustentável</title>
-    <!-- CSS externo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop of Water</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- CABEÇALHO -->
     <header>
-        <div class="logo-container">
-            <h1>💧 DROP OF WATER</h1>
-            <p class="slogan">Água que alimenta a terra, futuro que sustenta o campo</p>
-        </div>
-        <!-- Botão de acessibilidade fixo no canto -->
-        <div class="acessibilidade" id="btnAcessibilidade">
-            <button class="acess-btn" id="aumentarFonte" aria-label="Aumentar fonte">A+</button>
-            <button class="acess-btn" id="diminuirFonte" aria-label="Diminuir fonte">A-</button>
-            body {
-    background-image: url('https://images.unsplash.com/photo-1500387468-9049fed747ef?w=1920&h=1080&fit=crop');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
-
-        </div>
+        <h1>Drop of Water</h1>
+        <nav>
+            <ul>
+                <li><a href="#tema">Tema</a></li>
+                <li><a href="#problema">Problema</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#avaliacao">Avaliação do Solo</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- MENU DE NAVEGAÇÃO -->
-    <nav>
-        <ul class="menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#tema">Tema</a></li>
-            <li><a href="#problema">Problema</a></li>
-            <li><a href="#calculadora">Calculadora de Água</a></li>
-            <li><a href="#solo">Análise do Solo</a></li>
-        </ul>
-    </nav>
-
-    <!-- CONTEÚDO PRINCIPAL -->
     <main>
-        <!-- SEÇÃO INÍCIO -->
-        <section id="inicio" class="secao">
-            <h2>🌾 Bem-vindo ao futuro sustentável</h2>
-            <p>Você é agricultor ou morador da zona rural? Este site foi feito para ajudar você a <strong>economizar água</strong> e <strong>melhorar a qualidade do solo</strong> da sua lavoura.</p>
-            <p>Com poucos cliques, você descobre a quantidade ideal de água para sua plantação e recebe dicas personalizadas para revitalizar sua terra.</p>
-            <img src="https://via.placeholder.com/800x300?text=Agricultura+Sustentável" alt="Campo fértil com plantação e irrigação" class="imagem-destaque">
+        <section id="tema">
+            <h2>Tema</h2>
+            <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.</p>
         </section>
 
-        <!-- SEÇÃO TEMA -->
-        <section id="tema" class="secao">
-            <h2>🌱 Tema do Concurso</h2>
-            <p class="tema-destaque">"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
-            <p>Nosso projeto une tecnologia e sustentabilidade para ajudar o pequeno e médio agricultor a produzir mais gastando menos água e cuidando do solo.</p>
+        <section id="problema">
+            <h2>Problema</h2>
+            <p>O desperdício de água no campo e a necessidade de melhorar a fertilidade do solo.</p>
         </section>
 
-        <!-- SEÇÃO PROBLEMA -->
-        <section id="problema" class="secao">
-            <h2>⚠️ Problema que enfrentamos no campo</h2>
-            <p>O <strong>desperdício de água na agricultura</strong> e o <strong>esgotamento do solo fértil</strong> são dois dos maiores desafios do produtor rural. Sem controle, o agricultor gasta mais do que precisa e perde a qualidade da terra com o tempo.</p>
-            <p>Nosso site resolve isso com duas ferramentas práticas: calculadora de água e análise inteligente do solo (por descrição do problema).</p>
-        </section>
+        <section id="calculadora">
+            <h2>Calculadora de Consumo de Água</h2>
+            <form id="form-calculadora">
+                <label for="hectares">Quantos hectares você possui?</label>
+                <input type="number" id="hectares" required>
 
-        <!-- SEÇÃO CALCULADORA DE ÁGUA -->
-        <section id="calculadora" class="secao">
-            <h2>💧 Calculadora de Água por Hectare</h2>
-            <p>Preencha os dados abaixo e descubra quantos litros de água por dia são indicados para sua lavoura.</p>
-            
-            <div class="formulario">
-                <label for="hectares">Quantos hectares você possui? *</label>
-                <input type="number" id="hectares" placeholder="Ex: 5" step="0.1" required>
-                
-                <label for="tipoPlantacao">Qual o tipo da sua plantação? *</label>
-                <input type="text" id="tipoPlantacao" placeholder="Ex: Milho, Soja, Café, Hortaliças..." required>
-                
-                <label for="tipoIrrigacao">Tipo de irrigação utilizada:</label>
-                <select id="tipoIrrigacao">
-                    <option value="gotejamento">Gotejamento (economiza água)</option>
-                    <option value="aspersao">Aspersão (médio consumo)</option>
-                    <option value="sulco">Sulco / Inundação (alto consumo)</option>
+                <label for="plantacao">Tipo de plantação:</label>
+                <select id="plantacao" required>
+                    <option value="milho">Milho</option>
+                    <option value="soja">Soja</option>
+                    <option value="cana">Cana-de-açúcar</option>
                 </select>
-                
-                <button id="calcularAgua" class="botao">🔢 Calcular água necessária</button>
-                <button id="limparCalculadora" class="botao botao-secundario">🧹 Limpar</button>
-            </div>
-            
-            <div id="resultadoAgua" class="resultado">
-                <!-- resultado aparecerá aqui -->
-            </div>
+
+                <button type="submit">Calcular</button>
+            </form>
+            <div id="resultado"></div>
         </section>
 
-        <!-- SEÇÃO ANÁLISE DO SOLO (com foto simulada) -->
-        <section id="solo" class="secao">
-            <h2>🌿 Análise do Solo por Foto</h2>
-            <p>Tire uma foto do seu solo e descreva o problema. Nossa ferramenta dará dicas personalizadas para melhorar sua terra.</p>
-            
-            <div class="formulario-solo">
-                <label for="fotoSolo">📸 Envie uma foto do seu solo:</label>
-                <input type="file" id="fotoSolo" accept="image/*">
-                <small>Você pode tirar a foto agora ou escolher uma da galeria.</small>
-                
-                <label for="descricaoSolo">✍️ Descreva o problema do seu solo (ex: muito seco, encharcado, com rachaduras, pouca matéria orgânica...):</label>
-                <textarea id="descricaoSolo" rows="4" placeholder="Ex: O solo está muito ressecado, formando crosta e não retém água. As plantas estão amareladas."></textarea>
-                
-                <button id="analisarSolo" class="botao">🔍 Analisar solo</button>
-                <button id="limparSolo" class="botao botao-secundario">🧹 Limpar</button>
-            </div>
-            
-            <div id="resultadoSolo" class="resultado">
-                <!-- dicas de solo aparecerão aqui -->
-            </div>
-            
-            <!-- Pré-visualização da imagem -->
-            <div id="previewImagem" class="preview"></div>
+        <section id="avaliacao">
+            <h2>Avaliação do Solo</h2>
+            <form>
+                <label for="foto-solo">Envie uma foto do seu solo:</label>
+                <input type="file" id="foto-solo" accept="image/*">
+
+                <label for="descricao-solo">Descreva o problema do solo:</label>
+                <textarea id="descricao-solo"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <p>*A avaliação será feita manualmente com base na foto e descrição.</p>
         </section>
     </main>
 
-    <!-- RODAPÉ -->
     <footer>
-        <p>🌱 Drop of Water - Projeto Agrinho 2026</p>
-        <p>Equilíbrio entre produção e meio ambiente: água que alimenta, solo que sustenta.</p>
-        <p>&copy; 2026 - Todos os direitos reservados</p>
+        <p>Projeto Agrinho 2026 - Pedro Ricardo Witkovski</p>
     </footer>
 
-    <!-- JavaScript externo -->
+    <button id="btn-acessibilidade">Acessibilidade</button>
     <script src="script.js"></script>
 </body>
 </html>
