@@ -53,5 +53,28 @@ function toggleContraste() {
 // Impedir atualização no formulário de avaliação
 document.querySelector("#avaliacao form").addEventListener("submit", function(e) {
     e.preventDefault(); // impede atualização da página
+    // Avaliação do solo
+document.getElementById("form-solo").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const foto = document.getElementById("foto-solo").files[0];
+    const descricao = document.getElementById("descricao-solo").value;
+    if (foto && descricao) {
+        alert("Sua avaliação foi registrada com sucesso!");
+    } else {
+        alert("Por favor, envie uma foto e descreva o problema.");
+    }
+});
+
+// Feedback do site
+document.getElementById("form-feedback").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const opiniao = document.getElementById("opiniao").value;
+    if (opiniao.trim() !== "") {
+        alert("Obrigado pelo seu feedback!");
+    } else {
+        alert("Por favor, escreva sua opinião.");
+    }
+});
+
     alert("Sua descrição foi registrada!"); // feedback simples
 });
