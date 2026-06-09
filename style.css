@@ -1,16 +1,18 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(180deg, #e6f7ff, #fff);
     color: #333;
     line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
 header {
-    background: linear-gradient(90deg, #004080, #0073e6);
+    background: linear-gradient(90deg, #004080, #00b894);
     color: white;
     padding: 1rem;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 nav ul {
@@ -27,15 +29,21 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffdd59;
 }
 
 section {
     padding: 20px;
     margin: 20px auto;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease;
 }
 
 footer {
@@ -45,39 +53,47 @@ footer {
     padding: 1rem;
 }
 
-.imagem-ilustrativa {
-    width: 80px;
-    display: block;
-    margin: 10px auto;
-}
-
-.galeria {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.galeria img {
-    width: 200px;
+#barra-progresso {
+    width: 100%;
+    background: #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-top: 10px;
 }
 
-#btn-acessibilidade {
+#progresso {
+    height: 20px;
+    width: 0;
+    background: #00b894;
+    border-radius: 8px;
+    transition: width 1s ease;
+}
+
+#menu-acessibilidade {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #004080;
-    color: white;
-    border: none;
     padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
+    border-radius: 8px;
 }
 
-/* Alto contraste */
+#menu-acessibilidade button {
+    margin: 5px;
+    padding: 8px;
+    border: none;
+    background: #fff;
+    color: #004080;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 .alto-contraste {
-    background-color: black;
-    color: yellow;
+    background: black !important;
+    color: yellow !important;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
