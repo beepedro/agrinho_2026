@@ -1,6 +1,6 @@
 // Calculadora com barra de progresso
 document.getElementById("form-calculadora").addEventListener("submit", function(e) {
-    e.preventDefault();
+    e.preventDefault(); // impede atualização da página
     const hectares = parseFloat(document.getElementById("hectares").value);
     const plantacao = document.getElementById("plantacao").value.toLowerCase();
     let consumo = 0;
@@ -35,5 +35,23 @@ document.getElementById("btn-dica").addEventListener("click", function() {
 });
 
 // Acessibilidade
+let tamanhoFonte = 16;
 function aumentarFonte() {
-    document.body.style.fontSize = "18
+    tamanhoFonte += 2;
+    document.body.style.fontSize = tamanhoFonte + "px";
+}
+function diminuirFonte() {
+    if (tamanhoFonte > 10) {
+        tamanhoFonte -= 2;
+        document.body.style.fontSize = tamanhoFonte + "px";
+    }
+}
+function toggleContraste() {
+    document.body.classList.toggle("alto-contraste");
+}
+
+// Impedir atualização no formulário de avaliação
+document.querySelector("#avaliacao form").addEventListener("submit", function(e) {
+    e.preventDefault(); // impede atualização da página
+    alert("Sua descrição foi registrada!"); // feedback simples
+});
